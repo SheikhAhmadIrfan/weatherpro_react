@@ -1,0 +1,117 @@
+.searchcontainer {
+  display: flex;
+  flex-direction: column;
+  margin: -26px 50px;
+}
+.searchinput {
+  display: flex;
+}
+.searchinput button {
+  display: inline-block;
+  padding: 0px 22px;
+  font-size: 16px;
+  border: none;
+  background-color: #1f6899;
+  color: #fff;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 44px;
+  position: relative;
+  top: 32px;
+  left: 16px;
+  margin: 0px 10px;
+}
+.searchinput button:hover {
+  background-color: white;
+  color: black;
+}
+.searchinput input {
+  background-color: white;
+  padding: 7px 5px;
+  border: 1px solid #ccc;
+  margin: 35px 0px;
+  width: 32rem;
+  border-radius: 25px;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.searchcontent {
+  padding: 0px 35px;
+}
+.searchcontent h4,h1 {
+  color: white;
+  font-size: 25px;
+}
+.searchcontent span {
+  color: white;
+  position: relative;
+  bottom: 25px;
+}
+.searchmain {
+  display: flex;
+  gap: 250px;
+  position: relative;
+  bottom: 50px;
+}
+.searchpic img {
+  height: 120px;
+  width: 120px;
+  border-radius: 100px;
+}
+.searchpic {
+  position: relative;
+  top: 27px;
+}
+@media (max-width: 600px) {
+  .searchmain {
+    position: relative;
+    top: 183px;
+    font-size: 55px;
+    margin-top: 114px;
+  }
+  .searchinput input{
+    background-color: white;
+    padding: 40px 192px;
+    border: 1px solid #ccc;
+    margin: 58px 0px;
+    width: 65rem;
+    border-radius: 25px;
+    color: black;
+    font-size: 55px;
+    font-weight: lighter;
+    cursor: pointer;
+  }
+  .searchinput button{
+    display: inline-block;
+    padding: 20px 48px;
+    font-size: 38px;
+    border: none;
+    background-color: #1f6899;
+    color: #fff;
+    border-radius: 90px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 237px;
+    left: -1175px;
+    margin: 37px 67px;
+    height: 120px;
+  }
+  .searchpic img {
+    height: 240px;
+    width: 240px;
+    border-radius: 240px;
+  }
+  .searchcontent{
+    padding: 7px 35px;
+  }
+  .searchcontent h4,h1 {
+    color: white;
+    font-size: 50px;
+  }
+}
+
+

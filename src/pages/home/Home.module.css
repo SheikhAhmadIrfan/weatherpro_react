@@ -1,0 +1,9 @@
+.homecontainer {
+  display: flex;
+}
+.homemain {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -52px;
+}

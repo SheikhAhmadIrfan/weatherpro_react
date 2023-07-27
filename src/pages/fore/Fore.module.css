@@ -1,0 +1,14 @@
+.forecontainer {
+  display: flex;
+}
+.foremain {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  .foremain {
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+  }
+}

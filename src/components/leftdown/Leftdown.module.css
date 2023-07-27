@@ -1,0 +1,60 @@
+.downcontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 32px;
+  position: relative;
+  right: -56px;
+  top: -20px;
+  padding-bottom: 10px;
+}
+.overall {
+  display: flex;
+  gap: 70px;
+  color: rgb(33, 10, 87);
+}
+.one {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.two {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+.two img {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
+.three {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.four {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 600px) {
+  .downcontainer {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 32px;
+    position: relative;
+    right: -56px;
+    top: 192px;
+    padding-bottom: 10px;
+  }
+}

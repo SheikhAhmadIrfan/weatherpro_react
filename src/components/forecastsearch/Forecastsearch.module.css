@@ -1,0 +1,81 @@
+.forecastcontainer {
+  display: flex;
+}
+.forecastsearch input {
+  background-color: white;
+  padding: 15px 5px;
+  border: 1px solid #ccc;
+  margin: 35px 0px;
+  width: 35rem;
+  border-radius: 25px;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.forecastsearch button {
+  display: inline-block;
+  padding: 0px 26px;
+  font-size: 16px;
+  border: none;
+  background-color: #1f6899;
+  color: #fff;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 57px;
+  position: relative;
+  left: 130px;
+}
+.forecastsearch button:hover {
+  background-color: white;
+  color: black;
+}
+.forecastsearch1 input {
+  background-color: white;
+  padding: 15px 5px;
+  border: 1px solid #ccc;
+  margin: 35px 0px;
+  width: 7rem;
+  border-radius: 25px;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.forecastsearch1 button {
+  display: inline-block;
+  padding: 0px 26px;
+  font-size: 16px;
+  border: none;
+  background-color: #1f6899;
+  color: #fff;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 57px;
+  position: relative;
+  left: 130px;
+}
+.forecastsearch1 button:hover {
+  background-color: white;
+  color: black;
+}
+.forecastsearch1{
+    margin: 0px 150px;
+}
+@media (max-width: 600px) {
+  .forecastsearch input {
+    background-color: white;
+    padding: 32px 5px;
+    border: 1px solid #ccc;
+    margin: 35px 0px;
+    width: 40rem;
+    border-radius: 25px;
+    color: black;
+    font-size: 20px;
+    font-weight: lighter;
+    cursor: pointer;
+    height: 65px;
+  }
+}

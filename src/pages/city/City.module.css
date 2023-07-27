@@ -1,0 +1,19 @@
+.citycontainer {
+  display: flex;
+}
+.citymain {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  .citycontainer {
+    position: relative;
+  }
+  .citymain {
+    top: 640px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 200px;
+  }
+}
