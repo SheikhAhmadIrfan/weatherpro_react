@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/cities" element={<City/>} />
+        {/* // Following 2 routes are not working */}
         <Route path="/fore" element={<Fore/>} />
         <Route path="/map" element={<Custommap/>} />
       </Routes>
