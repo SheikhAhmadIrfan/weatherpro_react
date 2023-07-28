@@ -1,0 +1,88 @@
+.inputcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.inputsearch input {
+  background-color: white;
+  padding: 15px 5px;
+  border: 1px solid #ccc;
+  margin: 35px 0px;
+  width: 35rem;
+  border-radius: 25px;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.inputsearch button {
+  display: inline-block;
+  padding: 0px 26px;
+  font-size: 16px;
+  border: none;
+  background-color: #1f6899;
+  color: #fff;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 57px;
+  position: relative;
+  left: 10px;
+}
+.inputsearch button:hover {
+  background-color: white;
+  color: black;
+}
+.inputmain {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: rgb(33, 10, 87);
+  border-radius: 35px;
+  padding: 2px 32px;
+  gap: 40px;
+  position: relative;
+}
+.inputmain img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+}
+.inputcontent {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+}
+.inputcontent h1 {
+  color: rgb(33, 10, 87);
+}
+.inputcontent span {
+  position: relative;
+  bottom: 15px;
+  font-size: 26px;
+  color: rgb(33, 10, 87);
+}
+.inputh1 {
+  position: absolute;
+  right: 85px;
+  color: rgb(33, 10, 87);
+}
+.ui {
+  display: flex;
+  flex-direction: column;
+}
+.ui li {
+  margin: 10px;
+}
+.font {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .inputcontainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+}

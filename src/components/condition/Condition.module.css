@@ -1,0 +1,70 @@
+.conditioncontainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 80px;
+  background-color: #ffefef;
+  margin: 60px 40px;
+  gap: 10px;
+}
+.conditionheading span {
+  color: rgb(33, 10, 87);
+  font-size: 20px;
+}
+.conditionheading {
+  top: 10px;
+  position: relative;
+  left: 44px;
+}
+.conditionmain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 70px;
+  color: rgb(33, 10, 87);
+}
+.conditionmain span {
+  font-size: 10px;
+}
+.conditioncontent {
+  display: flex;
+  gap: 400px;
+}
+.conditioncontentone {
+  display: flex;
+  flex-direction: column;
+}
+.conditioncontenttwo {
+  display: flex;
+  gap: 20px;
+}
+.conditioncontenttwoo {
+  position: relative;
+  right: 34px;
+}
+@media (max-width: 600px) {
+  .conditioncontainer {
+    position: relative;
+    top: 360px;
+    font-size: 40px;
+    width: 59%;
+    margin-top: 20px;
+  }
+  .conditionheading{
+    top: 10px;
+    position: relative;
+    left: 454px;
+    font-size: 20px;
+  }
+  .conditionmain{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 0px 70px;
+    color: rgb(33, 10, 87);
+  }
+  .conditioncontent{
+    display: flex;
+    gap: 600px;
+    font-size: 50px;
+  }
+}

@@ -1,0 +1,34 @@
+.leftcontainer {
+  display: flex;
+  position: relative;
+  top: -6px;
+  right: -56px;
+}
+.leftcontent h1 {
+  color: white;
+  font-size: 44px;
+}
+.leftcontent span {
+  color: white;
+  font-size: 14px;
+}
+.leftmain {
+  display: flex;
+}
+.leftpic img {
+  height: 135px;
+  width: 135px;
+  border-radius: 100px;
+}
+.leftpic {
+  position: absolute;
+  right: 60px;
+  top: 78px;
+}
+@media (max-width: 600px) {
+  .leftpic {
+    position: absolute;
+    right: 0px;
+    top: 65px;
+  }
+}
