@@ -40,13 +40,32 @@ const Forecastsearch = () => {
     }
   }, [list, dispatch]);
   const [count, setCount] = useState(1);
+  const handleInput = (e) => {
+    const value = e.target.value;
+    if (value.match(/[0-9]/)) {
+      e.preventDefault();
+      alert("Please enter a valid city name. Integers are not allowed.");
+    } else {
+      setSearch(value);
+    }
+  };
+  const handleDaysInput = (e) => {
+    const value = e.target.value;
+    if (!value.match(/^\d+$/)) {
+      e.preventDefault();
+      alert("Please enter a valid number of days.");
+    } else {
+      setCount(value);
+    }
+  };
   return (
     <div className={classes.forecastcontainer}>
       <div className={classes.forecastsearch}>
-        <input
+      <input
           type="text"
           placeholder="Search for Cities"
-          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          onInput={handleInput}
         />
       </div>
       <div className={classes.forecastsearch1}>
@@ -55,7 +74,7 @@ const Forecastsearch = () => {
           placeholder="Days"
           min="1"
           max="7"
-          onChange={(e) => setCount(e.target.value)}
+          onChange={handleDaysInput}
         />
         <button onClick={handleApi}>Search</button>
       </div>

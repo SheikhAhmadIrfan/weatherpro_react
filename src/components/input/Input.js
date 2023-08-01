@@ -7,14 +7,21 @@ import cloud from "../../assets/cloud1.jpg";
 import rain from "../../assets/rain1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../../ui/loader/Loader";
 
 const Input = () => {
+  const [load, setLoad] = useState(false);
   const [search, setSearch] = useState("lahore");
   const [arr, setarr] = useState([]);
   const dispatch = useDispatch();
   const handleApi = () => {
+    setLoad(true);
     dispatch(fetchWeather(search)).catch((error) => {
       console.error("Error fetching weather data:", error);
+    }).finally(() => {
+      setTimeout(() => {
+        setLoad(false);
+      }, 1000);
     });
   };
   const data = useSelector((state) => state.weather.data);
@@ -34,6 +41,7 @@ const Input = () => {
         const cityData = {
           name,
           temperature: main?.temp,
+          id:Math.random(),
         };
         setarr((prev) => {
           const updatedArr = [cityData, ...prev.slice(0, 3 - 1)];
@@ -43,12 +51,21 @@ const Input = () => {
       }
     }
   }, [data, main?.temp, dispatch]);
-  const handleDelete = (name) => {
+  const handleDelete = (id) => {
     const newarr = arr.filter((item) => {
-      return item.name !== name;
+      return item.id !== id;
     });
     setarr(newarr);
     localStorage.setItem("isloggedin", JSON.stringify(newarr));
+  };
+  const handleInput = (e) => {
+    const value = e.target.value;
+    if (value.match(/[0-9]/)) {
+      e.preventDefault();
+      alert("Please enter a valid city name. Integers are not allowed.");
+    } else {
+      setSearch(value);
+    }
   };
   return (
     <div className={classes.inputcontainer}>
@@ -56,7 +73,8 @@ const Input = () => {
         <input
           type="text"
           placeholder="Search for Cities"
-          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          onInput={handleInput}
         />
         <button onClick={handleApi}>Add</button>
       </div>
@@ -77,7 +95,7 @@ const Input = () => {
               </div>
               <div
                 className={classes.font}
-                onClick={() => handleDelete(i.name)}
+                onClick={() => handleDelete(i.id)}
               >
                 <FontAwesomeIcon icon={faTrashCan} size="xl" />
               </div>
@@ -88,6 +106,7 @@ const Input = () => {
           );
         })}
       </ul>
+      {load && <Loader/>}
     </div>
   );
 };

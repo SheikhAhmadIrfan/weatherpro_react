@@ -8,6 +8,7 @@ import Home from "./pages/home/Home";
 import City from "./pages/city/City";
 import Fore from "./pages/fore/Fore";
 import {Custommap} from "./pages/custommap/Custommap";
+import Notfound from "./components/notfound/Notfound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* // Following 2 routes are not working */}
         <Route path="/fore" element={<Fore/>} />
         <Route path="/map" element={<Custommap/>} />
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
   );

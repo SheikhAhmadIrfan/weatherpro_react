@@ -43,6 +43,35 @@ export const getCityNameFromCoordinates = async (lat, lon) => {
     return "Error fetching city name";
   }
 };
+export const inputSlice = createSlice({
+  name: "input",
+  initialState: {
+    isLoading: false,
+    data: [],
+  },
+  reducers: {
+    addCityData(state, action) {
+      state.data.push(action.payload);
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchWeather.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchWeather.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = [action.payload];
+    });
+    builder.addCase(fetchWeather.rejected, (state, action) => {
+      console.log("error", action.error);
+      state.isLoading = false;
+      state.data = [];
+    });
+  },
+});
+
+export const inputSliceActions = inputSlice.actions;
+
 
 export const weatherSlice = createSlice({
   name: "weather",
