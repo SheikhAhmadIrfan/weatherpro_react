@@ -14,12 +14,12 @@ const Search = () => {
   const latitude = Location.coordinates.lat;
   const longitude = Location.coordinates.lon;
   const dispatch = useDispatch();
-  const [search, setSearch] = useState("");
+  const [ssearch, ssetSearch] = useState("");
   const [finish, setFinish] = useState("london");
-  const [load,setLoad]=useState(false)
+  const [load, setLoad] = useState(false);
   const handleApi = () => {
     setLoad(true);
-    dispatch(fetchWeather(search))
+    dispatch(fetchWeather(ssearch))
       .then((result) => {
         const { coord } = result.payload;
         if (coord) {
@@ -34,7 +34,7 @@ const Search = () => {
           setLoad(false);
         }, 1000);
       });
-    setFinish(search);
+    setFinish(ssearch);
   };
   const handleLocation = async () => {
     try {
@@ -55,7 +55,15 @@ const Search = () => {
       console.error("Error fetching city name:", error);
     }
   };
-
+  const handleInput = (e) => {
+    const value = e.target.value;
+    if (value.match(/[0-9]/)) {
+      e.preventDefault();
+      alert("Please enter a valid city name. Integers are not allowed.");
+    } else {
+      ssetSearch(value);
+    }
+  };
   useEffect(() => {
     dispatch(fetchWeather("London"));
     dispatch(fetchforecast({ a: -0.1257, b: 51.5085 }));
@@ -71,37 +79,37 @@ const Search = () => {
         <input
           type="text"
           placeholder="Search for Cities"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
+          value={ssearch}
+          onInput={handleInput}
         />
         <button onClick={handleApi}>Search</button>
         <button onClick={handleLocation}>Current Location</button>
       </div>
-      {!load && <div className={classes.searchmain}>
-        <div className={classes.searchcontent}>
-          <div className={classes.searchcontent2}>
-            <h1 style={{ textTransform: "uppercase" }}>{finish}</h1>
-            <span style={{ textTransform: "uppercase" }}>
-              {weatherDescription}
-            </span>
+      {!load && (
+        <div className={classes.searchmain}>
+          <div className={classes.searchcontent}>
+            <div className={classes.searchcontent2}>
+              <h1 style={{ textTransform: "uppercase" }}>{finish}</h1>
+              <span style={{ textTransform: "uppercase" }}>
+                {weatherDescription}
+              </span>
+            </div>
+            <div className={classes.searchcontent1}>
+              <h4>{temp1 + 1}&#176;</h4>
+            </div>
           </div>
-          <div className={classes.searchcontent1}>
-            <h4>{temp1 + 1}&#176;</h4>
+          <div className={classes.searchpic}>
+            {temperature < 20 ? (
+              <img src={rain} alt="" />
+            ) : temperature > 20 && temperature < 30 ? (
+              <img src={cloud} alt="" />
+            ) : (
+              <img src={sun} alt="" />
+            )}
           </div>
         </div>
-        <div className={classes.searchpic}>
-          {temperature < 20 ? (
-            <img src={rain} alt="" />
-          ) : temperature > 20 && temperature < 30 ? (
-            <img src={cloud} alt="" />
-          ) : (
-            <img src={sun} alt="" />
-          )}
-        </div>
-      </div>}
-      {load && <Loader/>}
+      )}
+      {load && <Loader />}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./Forecastitem.module.css";
 import sun from "../../assets/sun1.jpg";
 import cloud from "../../assets/cloud1.jpg";
@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 const Forecastitem = () => {
   const data2 = useSelector((state) => state.weather);
   const extractedObjects = data2.item.slice(0, data2.count);
+  console.log(extractedObjects)
   const dayNames = ["Today", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   return (
     <div className={classes.forecastcontainer}>
